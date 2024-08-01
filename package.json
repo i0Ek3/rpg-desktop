@@ -1,0 +1,52 @@
+{
+  "name": "Random Password Generator",
+  "homepage": "./",
+  "version": "1.0.0",
+  "description": "Random Password Generator Desktop Version which made by Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . --trace-warnings",
+    "build": "node ./electron-vue-template/build.js && electron-builder",
+    "build:linux": "node ./electron-vue-template/build.js && electron-builder -l deb",
+    "build:mac": "node ./electron-vue-template/build.js && electron-builder -m zip",
+    "build:win": "node ./electron-vue-template/build.js && electron-builder -w"
+  },
+  "keywords": [],
+  "author": "i0Ek3",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.i0ek3.rpg",
+    "productName": "Random Password Generator",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "rpg.js",
+      "node_modules/**"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ]
+    }
+  }
+}
